@@ -59,6 +59,7 @@
 						class="item"
 					/>
 				</div>
+				<input type="text" name="isCompleted" id="isCompleted" value="False" hidden>
 				<div id="buttons">
 					<button type="submit" id="at">
 						<i class="fas fa-plus"></i> Add Task
@@ -69,5 +70,27 @@
 				</div>
 			</form>
 		</div>
+
+		<div id="tasks-list">
+			<ul type="none">
+				<% for(let i=0;i<tasks.length;i++){ %>
+					<li>
+						<p><%= tasks[i].description %></p>
+						<p><%= tasks[i].category %></p>
+						<p><%= tasks[i].dueDate %></p>
+						
+						
+						<input id="isCompleted" type="checkbox" name="isCompleted" <%= check(tasks[i]) %>/>
+						
+						<p><%= tasks[i].isCompleted %></p>
+					</li>
+				<% } %>
+			</ul>
+		</div>
+		<script>
+			function check(task) {
+				console.log(task.isCompleted);
+			}
+		</script>
 	</body>
 </html>
