@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			src="https://kit.fontawesome.com/a81958f0f2.js"
+			crossorigin="anonymous"
+		></script>
+
+		<link rel="stylesheet" href="/css/styles.css" />
+		<title><%= title %></title>
+	</head>
+	<body>
+		<div id="heading">
+			<h1>To-Do List</h1>
+		</div>
+
+		<div id="form-data">
+			<form action="/create-task" method="post">
+				<div class="form-item first">
+					<label for="description" class="item"> Description: </label>
+					<input
+						type="text"
+						id="description"
+						name="description"
+						placeholder="What do you need to do?"
+						class="item"
+					/>
+				</div>
+				<div class="form-item second">
+					<label for="category" class="item"> Category: </label>
+					<select
+						name="category"
+						id="category"
+						placeholder="Choose a category"
+						class="item"
+					>
+						<option value="">Choose a category</option>
+						<option value="Work">Work</option>
+						<option value="Personal">Personal</option>
+						<option value="School">School</option>
+					</select>
+				</div>
+				<div class="form-item second">
+					<label for="due-date" class="item"> Description: </label>
+					<input
+						type="date"
+						id="due-date"
+						name="dueDate"
+						placeholder="dd/mm/yyyy"
+						class="item"
+					/>
+				</div>
+				<div id="buttons">
+					<button type="submit" id="at">
+						<i class="fas fa-plus"></i> Add Task
+					</button>
+					<button type="button" id="dt">
+						<i class="fas fa-trash"></i> Delete Tasks
+					</button>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
